@@ -15,6 +15,7 @@ namespace LiveCounter
 
         static void Main(string[] args)
         {
+            Console.Title = "Live Corona Counter | Refreshing every 2 Seconds";
             drawAscii();
             drawBox();
 
