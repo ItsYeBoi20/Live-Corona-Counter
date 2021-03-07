@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -47,9 +46,17 @@ namespace LiveCounter
                 {
                     var splitItem = Regex.Split(item, ">");
 
-                    totalCases = splitItem[31].Replace(" </span", "");
-                    totalDeaths = splitItem[43].Replace("</span", "");
-                    totalRecovered = splitItem[51].Replace("</span", "");
+                    /* Enable this to Debug, in case the current Locations of the Numbers change!!!
+                    int number = 0;
+                    foreach(string idkkdk in splitItem)
+                    {
+                        Console.WriteLine(idkkdk + "[" + number + "]");
+                        number++;
+                    }*/
+
+                    totalCases = splitItem[19].Replace(" </span", "");
+                    totalDeaths = splitItem[31].Replace("</span", "");
+                    totalRecovered = splitItem[39].Replace("</span", "");
 
                     string replaceCommaCases = totalCases.Replace(",", "");
                     string replaceCommaRecovered = totalRecovered.Replace(",", "");
